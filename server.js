@@ -2,10 +2,6 @@
 const express = require('express');
 const path = require('path');
 const BodyParser = require("body-parser");
-const mongoose = require('mongoose');
-
-
-
 const app = express();
  
 // Serve only the static files form the angularapp directory
