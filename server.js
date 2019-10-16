@@ -2,18 +2,9 @@
 const express = require('express');
 const path = require('path');
 const BodyParser = require("body-parser");
-const MongoClient = require("mongodb").MongoClient;
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://admin:admin@rlcluster-bnavh.mongodb.net/test?retryWrites=true&w=majority', { useMongoClient: true});
 
-mongoose.connection.on('connected', () => {
-  console.log('Connected to Database ');
-});
-
-mongoose.connection.on('error', (err) => {
-  console.log('Database error '+err);
-});
 
 const app = express();
  
