@@ -1,14 +1,10 @@
 //Install express server
 const express = require('express');
 const path = require('path');
-const BodyParser = require("body-parser");
 const app = express();
  
 // Serve only the static files form the angularapp directory
 app.use(express.static(__dirname + '/angularapp'));
- 
-app.use(BodyParser.json());
-app.use(BodyParser.urlencoded({ extended: true }));
 
 app.get('/*', function(req,res) {
  
