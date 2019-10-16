@@ -1,10 +1,23 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://admin:admin@rlcluster-bnavh.mongodb.net/test?retryWrites=true&w=majority', { useMongoClient: true});
+
+mongoose.connection.on('connected', () => {
+  console.log('Connected to Database ');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.log('Database error '+err);
+});
+
 const app = express();
  
 // Serve only the static files form the angularapp directory
 app.use(express.static(__dirname + '/angularapp'));
+ 
 
 app.get('/*', function(req,res) {
  
