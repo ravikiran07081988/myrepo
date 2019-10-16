@@ -25,13 +25,3 @@ res.sendFile(path.join(__dirname+'/angularapp/index.html'));
 
 app.listen(process.env.PORT || 8080);
 
-app1.listen(3000, () => {
-	MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
-        if(error) {
-            throw error;
-        }
-        database = client.db(DATABASE_NAME);
-        collection = database.collection("myCollection");
-        console.log("Connected to `" + DATABASE_NAME + "`!");
-    });
-});
